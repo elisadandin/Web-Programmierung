@@ -18,3 +18,22 @@ nav{
   align-items: center;
   list-style: none;
 }
+
+.shop{
+  text-align: center;
+  align-items: center;
+  display:grid;
+}
+
+
+.products{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  text-align: center;
+  align-items: center;
+  align-content: center;
+}
+
+.products img {
+  width: 20%;
+}
