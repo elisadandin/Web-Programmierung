@@ -103,19 +103,41 @@ export class DataProvider extends Component {
 
     addCart = (id) =>{
         const {products, cart} = this.state;
+        const check = cart.every(item =>{
+            return item._id !== id
+        })
         const data = products.filter(product =>{
             return product._id === id
         })
         this.setState({cart: [...cart,...data]})
+    };
+
+    reduction = id =>{
+        const { cart } = this.state;
+        cart.forEach(item =>{
+            if(item._id === id){
+                item._id === 1 ? item.count = 1 : item.count -=1;
+            }
+         })
     }
+    increase = id =>{
+        const { cart } = this.state;
+        cart.forEach(item =>{
+            if(item._id === id){
+                item.count += 1;
+            }
+         })
+    }
+
+
 
 
 
     render() {
         const {products, cart} = this.state;
-        const {addCart} = this;
+        const {addCart, reduction, increase} = this;
         return (
-            <DataContext.Provider value={{products, addCart, cart}}>
+            <DataContext.Provider value={{products, addCart, cart, reduction, increase}}>
                 {this.props.children}
             </DataContext.Provider>
         )

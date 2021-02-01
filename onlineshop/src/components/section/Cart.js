@@ -7,12 +7,12 @@ export class Cart extends Component {
     static contextType = DataContext;
 
     render() {
-        const {cart} = this.context;
+        const {cart, increase, reduction} = this.context;
         return (
             <>
                 {
                     cart.map(item =>(
-                        <div className="products" key={item._id}>
+                        <div className="CartItem" key={item._id}>
                             <img src={item.src} alt=""/>
                             <div className="box">
                                 <div className="row">
@@ -21,9 +21,11 @@ export class Cart extends Component {
                                 </div>
                                 <p>{item.description}</p>
                                 <p>{item.content}</p>
-                                <Link to="cart" className="cart">
-                                    Add to Cart
-                                </Link>
+                                <div className="amount">
+                                    <button className="count" onClick={() => reduction(item._id)}> - </button>
+                                    <span>{item.count}</span>
+                                    <button className="count" onClick={() => increase(item._id)}> + </button>
+                                </div>
                             </div>
                         </div>
                     ))
