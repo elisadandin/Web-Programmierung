@@ -119,7 +119,9 @@ export class DataProvider extends Component {
                 item._id === 1 ? item.count = 1 : item.count -=1;
             }
          })
-    }
+         this.setState({cart: cart});
+    };
+
     increase = id =>{
         const { cart } = this.state;
         cart.forEach(item =>{
@@ -127,7 +129,19 @@ export class DataProvider extends Component {
                 item.count += 1;
             }
          })
-    }
+         this.setState({cart: cart});
+    };
+
+    remove = id =>{
+        const {cart} = this.state;
+        cart.forEach((item, index) =>{
+            if(item._id === id){
+                cart.splice(index, 1)
+            }
+        })
+        this.setState({cart: cart})
+    };
+
 
 
 
@@ -135,9 +149,9 @@ export class DataProvider extends Component {
 
     render() {
         const {products, cart} = this.state;
-        const {addCart, reduction, increase} = this;
+        const {addCart, reduction, increase, remove} = this;
         return (
-            <DataContext.Provider value={{products, addCart, cart, reduction, increase}}>
+            <DataContext.Provider value={{products, addCart, cart, reduction, increase, remove}}>
                 {this.props.children}
             </DataContext.Provider>
         )
