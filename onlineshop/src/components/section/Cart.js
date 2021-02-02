@@ -31,9 +31,12 @@ export class Cart extends Component {
                         </div>
                     ))
                 }
+                <div className="total">
+                    <Link to="/payment"> Bezahlen </Link>
+                    <h3>Gesamtsumme: 0</h3>
+
+                </div>
             </>
-                    
-           
         )
     }
 }
