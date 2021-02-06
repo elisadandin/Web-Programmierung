@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Products from './section/Products'
 import {Route} from "react-router-dom"
 import Cart from './section/Cart'
-import Payment from './section/Payment'
+import Payment from './payment/Payment'
 
 export class Section extends Component {
     render() {
