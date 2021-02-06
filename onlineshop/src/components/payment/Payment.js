@@ -1,14 +1,11 @@
-import React, {Component} from 'react'
+import React, {Component} from 'react';
+import { UserForm } from './UserForm'
 
 export class Payment extends Component {
     render() {
         return(
             <div>
-                <h2>Bezahlen</h2>
-                <h3>Name</h3>
-                <h3>Adresse</h3>
-                <h3>E-Mail</h3>
-                <h3>Bestätigen</h3>
+               <UserForm />
             </div>
         )
     }
