@@ -38,8 +38,6 @@ export class UserForm extends Component {
                   />
                 )
             case 2:
-                return <h1>Confirm</h1>
-            case 3:
                 return <h1>Success</h1>
         }
     }
