@@ -30,7 +30,7 @@ export class Cart extends Component {
                                         <button className="count" onClick={() => increase(item._id)}> + </button>
                                     </div>
                                 </div>
-                                <div className="delete" onClick={() => remove(item._id)}>X</div>
+                                <button className="delete" onClick={() => remove(item._id)}>Löschen</button>
                             </div>
                         ))
                     }
