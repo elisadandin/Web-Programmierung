@@ -23,7 +23,6 @@ export class Cart extends Component {
                                         <span>${item.price}</span>
                                     </div>
                                     <p>{item.description}</p>
-                                    <p>{item.content}</p>
                                 </div>
                                 <button className="delete" onClick={() => remove(item._id)}>Löschen</button>
                             </div>
