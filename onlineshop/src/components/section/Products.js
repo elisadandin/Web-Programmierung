@@ -14,14 +14,12 @@ export class Products extends Component {
                 {
                     products.map(product =>(
                         <div className="shoppingcard" key={product._id}>
-                            <Link to={`/product/${product._id}`}>
                                 <img src={product.src} alt=""/>
-                            </Link>
                             <div className="content">
                                 <h3>{product.title}</h3>
                                 <span>${product.price}</span>
                                 <p>{product.description}</p>
-                                <button onClick={()=> this.context.addCart(product._id)}>Add to cart</button>
+                                <button onClick={()=> this.context.addCart(product._id)}>in den Einkaufswagen</button>
 
                             </div>
                         
