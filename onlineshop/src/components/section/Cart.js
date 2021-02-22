@@ -4,22 +4,25 @@ import {DataContext} from '../Context'
 import '../css/Cart.css'
 
 
+//Klasse Cart erzeugen, die von der Klasse Component abgeleitet wird
 export class Cart extends Component {
     static contextType = DataContext;
 
-    //Gesamtsumme bestimmen
+    //Gesamtsumme bestimmen und anzeigen lassen
     componentDidMount(){
         this.context.getTotal();
     }
 
     render() {
-        const {cart, remove, total} = this.context;
+    const {cart, remove, total} = this.context;
+        //if else Befehl, wenn Warenkorblänge = 0, dann anzeigen lassen 'Warenkorb ist leer'
         if(cart.lenght === 0){
             return <hr style={{textAlign:"center"}}>Warenkorb ist leer</hr>
         }else{
             return (
                 <>
                     {
+                         //map() function creates array by calling a specific function "item"
                         cart.map(item =>(
                             <div className="CartItem" key={item._id}>
                                 <img src={item.src} alt=""/>
@@ -35,12 +38,13 @@ export class Cart extends Component {
                         ))
                     }
                     <div className="total">
-                        <Link to="/payment"> 
-                        Bezahlen 
-                        </Link>
+                        <button>
+                            <Link to="/payment"> 
+                            Bezahlen 
+                            </Link>
+                        </button>
                         <br/>
                         <h3>Gesamtsumme: ${total}</h3>
-    
                     </div>
                 </>
                 )

@@ -4,6 +4,7 @@ export const DataContext = React.createContext();
 
 export class DataProvider extends Component {
 
+    //Produkte mit Informationen des Shops in State-Objekt angeben
     state = {
         products: [
             {
@@ -92,6 +93,7 @@ export class DataProvider extends Component {
 
     };
 
+    //Artikel zum Warenkorb hinzufügen
     addCart = (id) =>{
         const {products, cart} = this.state;
         const check = cart.every(item =>{
@@ -104,6 +106,7 @@ export class DataProvider extends Component {
     };
 
 
+    //Artikel aus Warenkorb entfernen
     remove = id =>{
         const {cart} = this.state;
         cart.forEach((item, index) =>{
