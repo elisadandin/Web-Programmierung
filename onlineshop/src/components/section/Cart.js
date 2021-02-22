@@ -3,13 +3,19 @@ import {Link} from 'react-router-dom'
 import {DataContext} from '../Context'
 import '../css/Cart.css'
 
+
 export class Cart extends Component {
     static contextType = DataContext;
 
+    //Gesamtsumme bestimmen
+    componentDidMount(){
+        this.context.getTotal();
+    }
+
     render() {
-        const {cart, increase, reduction, remove} = this.context;
+        const {cart, remove, total} = this.context;
         if(cart.lenght === 0){
-            return <h2 style={{textAlign:"center"}}>Warenkorb ist leer</h2>
+            return <hr style={{textAlign:"center"}}>Warenkorb ist leer</hr>
         }else{
             return (
                 <>
@@ -33,7 +39,7 @@ export class Cart extends Component {
                         Bezahlen 
                         </Link>
                         <br/>
-                        <h3>Gesamtsumme: 0</h3>
+                        <h3>Gesamtsumme: ${total}</h3>
     
                     </div>
                 </>

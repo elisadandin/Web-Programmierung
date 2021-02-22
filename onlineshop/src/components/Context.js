@@ -87,7 +87,8 @@ export class DataProvider extends Component {
                 "count": 1
             }
         ],
-        cart: []
+        cart: [],
+        total: 0
 
     };
 
@@ -113,12 +114,21 @@ export class DataProvider extends Component {
         this.setState({cart: cart})
     };
 
+    //Gesamtsumme bestimmen
+    getTotal = ()=>{
+        const{cart} = this.state;
+        const res = cart.reduce((prev, item) => {
+            return prev + item.price;
+        },0)
+        this.setState({total: res})
+    }
+
 
     render() {
-        const {products, cart} = this.state;
-        const {addCart,remove} = this;
+        const {products, cart, total} = this.state;
+        const {addCart,remove, getTotal} = this;
         return (
-            <DataContext.Provider value={{products, addCart, cart, remove}}>
+            <DataContext.Provider value={{products, addCart, cart, remove, total, getTotal}}>
                 {this.props.children}
             </DataContext.Provider>
         )
