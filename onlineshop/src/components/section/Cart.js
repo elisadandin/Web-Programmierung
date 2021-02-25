@@ -14,16 +14,16 @@ export class Cart extends Component {
     }
 
     render() {
-    const {cart, remove, total} = this.context;
+        const {cart, remove, total} = this.context;
         //if else Befehl, wenn Warenkorblänge = 0, dann anzeigen lassen 'Warenkorb ist leer'
-        if(cart.lenght === 0){
+        if(cart.lenght === 0){ 
             return <hr style={{textAlign:"center"}}>Warenkorb ist leer</hr>
         }else{
             return (
                 <>
-                    {
-                         //map() function creates array by calling a specific function "item"
+                    { //map() function creates array by calling a specific function "item"
                         cart.map(item =>(
+                            //als Key 'item._id' wählen 
                             <div className="CartItem" key={item._id}>
                                 <img src={item.src} alt=""/>
                                 <div className="box">
@@ -36,8 +36,8 @@ export class Cart extends Component {
                                 <button className="delete" onClick={() => remove(item._id)}>Löschen</button>
                             </div>
                         ))
-                    }
-                    <div className="total">
+                    } 
+                    <div className="total"> 
                         <button>
                             <Link to="/payment"> 
                             Bezahlen 
@@ -47,9 +47,10 @@ export class Cart extends Component {
                         <h3>Gesamtsumme: ${total}</h3>
                     </div>
                 </>
+                
                 )
             }
         }  
         
-    }
+}
 export default Cart

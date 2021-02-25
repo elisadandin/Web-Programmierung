@@ -36,10 +36,10 @@
     color: #333;
 }
 .shoppingcard h3 a:hover{
-    color: rgb(10, 134, 134);
+    color: black;
 }
 .shoppingcard span{
-    color:rgb(10, 134, 134);
+    color: black;
 }
 .shoppingcard p{
     margin: 10px 0;
@@ -47,7 +47,7 @@
 .shoppingcard button{
     border: none;
     outline: none;
-    background: #333;
+    background: rgb(0, 154, 165);
     color: white;
     width: 100%;
     height: 40px;

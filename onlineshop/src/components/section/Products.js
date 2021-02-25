@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import {Link} from 'react-router-dom'
 import {DataContext} from '../Context'
 import '../css/Products.css'
 
@@ -15,7 +14,8 @@ export class Products extends Component {
                 {
                     //map() function creates array by calling a specific function "products"
                     products.map(product =>(
-                        <div className="shoppingcard" key={product._id}>
+                        //Key: 'product._id', da diese Elemente angezeigt, ausgewählt und dem Warenkorb hinzugefügt/entfernt werden
+                        <div className="shoppingcard" key={product._id}> 
                                 <img src={product.src} alt=""/>
                             <div className="content">
                                 <h3>{product.title}</h3>

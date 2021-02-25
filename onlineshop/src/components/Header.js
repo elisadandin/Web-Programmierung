@@ -14,9 +14,8 @@ export class Header extends Component {
         const {cart} = this.context;
         return (
             <header>
-                <img src={HeartIcon} alt="" width="40"/> 
                 <div className="logo">
-                    <h1><Link to ="/">MyFitnessplace</Link></h1> 
+                    <h1><Link to ="/">MyFitnessplace <img src={HeartIcon} alt="" width="40"/></Link></h1> 
                 </div>
                 <nav>
                     <ul>

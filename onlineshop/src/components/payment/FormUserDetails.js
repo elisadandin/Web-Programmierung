@@ -43,7 +43,7 @@ export class FormUserDetails extends Component {
                   />
                   <br/>
                   <RaisedButton
-                  label="Bestätigen"
+                  label="Bezahlen"
                   primary={true}
                   style={styles.button}
                   onClick={this.continue}
