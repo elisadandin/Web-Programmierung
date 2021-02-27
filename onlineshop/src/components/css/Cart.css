@@ -56,12 +56,24 @@
     background: tomato;
 }
 .total{
-    text-decoration: black;
-    margin: 20px 0; 
-    color: #000;
-    text-shadow: black;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
+.total a{
+    text-decoration: none;
+    background:rgb(0, 154, 165);
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 10px 25px;
+}
+.total h3{
+    margin-right: 50px;
+}
 
 
 

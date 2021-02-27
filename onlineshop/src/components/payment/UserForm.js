@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import FormUserDetails from './FormUserDetails';
 import Success from './Success'
 
+
+//Fields bennen
 export class UserForm extends Component {
     state = {
         step: 1,
@@ -29,6 +31,7 @@ export class UserForm extends Component {
         const { firstName, lastName, address, email } = this.state;
         const values = { firstName, lastName, address, email }
 
+//Steps definieren
         switch(step) {
             case 1:
                 return (
@@ -37,7 +40,7 @@ export class UserForm extends Component {
                     handleChange={this.handleChange}
                     values={values}
                   />
-                )
+                );
             case 2:
                 return <Success/>
         }

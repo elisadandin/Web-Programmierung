@@ -114,14 +114,15 @@ export class DataProvider extends Component {
                 cart.splice(index, 1)
             }
         })
-        this.setState({cart: cart})
+        this.setState({cart: cart});
+        this.getTotal();
     };
 
     //Gesamtsumme bestimmen
     getTotal = ()=>{
         const{cart} = this.state;
         const res = cart.reduce((prev, item) => {
-            return prev + item.price;
+            return prev + (item.price*item.count);
         },0)
         this.setState({total: res})
     }

@@ -38,11 +38,9 @@ export class Cart extends Component {
                         ))
                     } 
                     <div className="total"> 
-                        <button>
                             <Link to="/payment"> 
                             Bezahlen 
                             </Link>
-                        </button>
                         <br/>
                         <h3>Gesamtsumme: ${total}</h3>
                     </div>

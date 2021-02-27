@@ -8,7 +8,7 @@ export class Success extends Component {
         e.preventDefault();
         this.props.nextStep();
     }
-
+//Dankesnachricht rendern
     render() {
         return (
             <MuiThemeProvider>
@@ -17,7 +17,7 @@ export class Success extends Component {
                     <br/>
                     <h1>Vielen Dank für deinen Einkauf!</h1>
                     <br/>
-                    <p>Die Bestellbestästigung wurde an deine E-Mail Adresse verschickt</p>
+                    <p>Die Bestellbestästigung mit der Rechnung wurde an deine E-Mail Adresse verschickt</p>
                 </React.Fragment>
             </MuiThemeProvider>
         );

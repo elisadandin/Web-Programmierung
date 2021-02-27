@@ -11,7 +11,7 @@ export class FormUserDetails extends Component {
         e.preventDefault();
         this.props.nextStep();
     }
-
+//Fields für das Kontaktformular angeben
     render() {
         const { values, handleChange } = this.props;
         return (
@@ -54,7 +54,7 @@ export class FormUserDetails extends Component {
         )
     }
 }
-
+//Design: Button
 const styles = {
     button: {
         margin: 15

@@ -9,7 +9,7 @@ import {DataContext} from './Context'
 export class Header extends Component {
     static contextType = DataContext;
 
-
+//Header definieren
     render() {
         const {cart} = this.context;
         return (
@@ -21,7 +21,7 @@ export class Header extends Component {
                     <ul>
                         <li><Link to="/product">Produkte</Link></li>
                     </ul>
-                    <div className="nav-cart">
+                    <div className="nav-cart"> 
                         <span>{cart.length}</span>
                         <Link to="/cart">
                             <img src={CartIcon} alt="" width="20"/>
